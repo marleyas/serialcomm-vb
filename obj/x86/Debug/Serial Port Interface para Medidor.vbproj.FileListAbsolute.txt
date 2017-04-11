@@ -1,0 +1,9 @@
+C:\Users\Asus\documents\visual studio 2010\Projects\Serial Port Interface para Medidor\Serial Port Interface para Medidor\bin\Debug\Serial Port Interface para Medidor.exe
+C:\Users\Asus\documents\visual studio 2010\Projects\Serial Port Interface para Medidor\Serial Port Interface para Medidor\bin\Debug\Serial Port Interface para Medidor.pdb
+C:\Users\Asus\documents\visual studio 2010\Projects\Serial Port Interface para Medidor\Serial Port Interface para Medidor\bin\Debug\Serial Port Interface para Medidor.xml
+C:\Users\Asus\documents\visual studio 2010\Projects\Serial Port Interface para Medidor\Serial Port Interface para Medidor\obj\x86\Debug\WindowsApplication1.frmMain.resources
+C:\Users\Asus\documents\visual studio 2010\Projects\Serial Port Interface para Medidor\Serial Port Interface para Medidor\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\Asus\documents\visual studio 2010\Projects\Serial Port Interface para Medidor\Serial Port Interface para Medidor\obj\x86\Debug\Serial Port Interface para Medidor.vbproj.GenerateResource.Cache
+C:\Users\Asus\documents\visual studio 2010\Projects\Serial Port Interface para Medidor\Serial Port Interface para Medidor\obj\x86\Debug\Serial Port Interface para Medidor.exe
+C:\Users\Asus\documents\visual studio 2010\Projects\Serial Port Interface para Medidor\Serial Port Interface para Medidor\obj\x86\Debug\Serial Port Interface para Medidor.xml
+C:\Users\Asus\documents\visual studio 2010\Projects\Serial Port Interface para Medidor\Serial Port Interface para Medidor\obj\x86\Debug\Serial Port Interface para Medidor.pdb
