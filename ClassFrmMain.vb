@@ -98,49 +98,43 @@ Public Class frmMain
         Me.Invoke(adreData, StringToHexString(ReceivedData.ToString))
         Dim cmd As String = ""
         If ReceivedData = 5 Then
-            Me.Invoke(adreInfo, "<ENQ>" + vbNewLine)
+            Me.Invoke(adreInfo, "<ENQ>")
             cmd = "21 12 34 56 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 AA"
-            Me.Invoke(adreCmd, cmd + vbNewLine)
+            Me.Invoke(adreCmd, cmd)
             SerialPort1.Write(cmd)
         ElseIf ReceivedData = 21 Then
-            Me.Invoke(adreInfo, "<OK>" + vbNewLine)
+            Me.Invoke(adreInfo, "<OK>")
         ElseIf ReceivedData = 40 Then
-            Me.Invoke(adreInfo, "<PILHA>" + vbNewLine)
+            Me.Invoke(adreInfo, "<PILHA>")
             cmd = "37 12 34 56 77 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 B0"
             SerialPort1.Write(cmd)
         ElseIf ReceivedData = 37 Then
-            Me.Invoke(adreInfo, "<PILHA_OK>" + vbNewLine)
+            Me.Invoke(adreInfo, "<PILHA_OK>")
             cmd = "37 12 34 56 77 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 68 B0"
             SerialPort1.Write(cmd)
         Else
-            Me.Invoke(adreError, "<FALHA_COMUNICAÇÃO>" + vbNewLine)
+            Me.Invoke(adreError, "<FALHA_COMUNICAÇÃO>")
         End If
 
     End Sub
 
     Private Sub PrintDataMessage(ByVal sData As String, sType As String)
         Dim mColor As Color
-        Dim mFont As Font
         Select Case sType
             Case "cmd"
                 mColor = Color.Blue
-                mFont = New Font(rbtReceived.Font, FontStyle.Regular)
             Case "info"
                 mColor = Color.Green
-                mFont = New Font(rbtReceived.Font, FontStyle.Regular)
             Case "message"
                 mColor = Color.Black
-                mFont = New Font(rbtReceived.Font, FontStyle.Regular)
             Case "error"
                 mColor = Color.Red
-                mFont = New Font(rbtReceived.Font, FontStyle.Regular)
             Case Else
                 mColor = Color.DarkGray
-                mFont = New Font(rbtReceived.Font, FontStyle.Regular)
         End Select
         rbtReceived.SelectedText = String.Empty
-        rbtReceived.SelectionFont = mFont
         rbtReceived.SelectionColor = mColor
+
         rbtReceived.AppendText(sData)
         rbtReceived.ScrollToCaret()
         If rbtReceived.Lines.Length > 1000 Then
@@ -166,12 +160,6 @@ Public Class frmMain
         PrintDataMessage(sdata + " ", "info")
         fileLog.Write(sdata + " ")
     End Sub
-    'fecha o arquivo e finaliza o form
-    Protected Overrides Sub Finalize()
-        fileLog.Close()
-        MyBase.Finalize()
-    End Sub
-
     Private Sub LinkFileLog_LinkClicked(sender As System.Object, e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkFileLog.LinkClicked
         ' abre o bloco de notas com o arquivo de log
         System.Diagnostics.Process.Start("notepad.exe", urlFileLog)
