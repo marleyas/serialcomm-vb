@@ -28,6 +28,7 @@ Partial Class frmMain
         Me.btnConecta = New System.Windows.Forms.Button()
         Me.rbtReceived = New System.Windows.Forms.RichTextBox()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.LinkFileLog = New System.Windows.Forms.LinkLabel()
         Me.SuspendLayout()
         '
         'Label1
@@ -72,11 +73,23 @@ Partial Class frmMain
         Me.SerialPort1.DtrEnable = True
         Me.SerialPort1.RtsEnable = True
         '
+        'LinkFileLog
+        '
+        Me.LinkFileLog.AutoSize = True
+        Me.LinkFileLog.Enabled = False
+        Me.LinkFileLog.Location = New System.Drawing.Point(15, 437)
+        Me.LinkFileLog.Name = "LinkFileLog"
+        Me.LinkFileLog.Size = New System.Drawing.Size(59, 13)
+        Me.LinkFileLog.TabIndex = 4
+        Me.LinkFileLog.TabStop = True
+        Me.LinkFileLog.Text = "LinkLabel1"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(624, 442)
+        Me.ClientSize = New System.Drawing.Size(624, 463)
+        Me.Controls.Add(Me.LinkFileLog)
         Me.Controls.Add(Me.rbtReceived)
         Me.Controls.Add(Me.btnConecta)
         Me.Controls.Add(Me.cmbPorta)
@@ -93,5 +106,6 @@ Partial Class frmMain
     Friend WithEvents btnConecta As System.Windows.Forms.Button
     Friend WithEvents rbtReceived As System.Windows.Forms.RichTextBox
     Friend WithEvents SerialPort1 As System.IO.Ports.SerialPort
+    Friend WithEvents LinkFileLog As System.Windows.Forms.LinkLabel
 
 End Class
